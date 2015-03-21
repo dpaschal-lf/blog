@@ -23,3 +23,36 @@
     height: 25px;
     width: auto;
 }
+/*main content*/
+#main_content{
+    position: relative;
+    top: 50px;
+}
+
+/*login styles*/
+.login_small input{
+    width: 80%;
+    line-height: 8vh;
+    height: 8vh;
+    font-size: 5vh;
+    margin: 0 auto;
+    
+}
+.login_dialog{
+    position: relative;
+}
+.login_form{
+    position: absolute;
+    top: 21px;
+    right: 0%;
+    width: 100px;
+    height: 100px;
+    background: green;
+    text-align: center;
+    border-radius: 2.5%;
+    border: 1px solid gray;
+    background-color: lightgray;
+}
+.login_small >.login_submit{
+    margin-top: 5px;
+}
