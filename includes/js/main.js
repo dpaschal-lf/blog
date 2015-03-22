@@ -28,6 +28,7 @@ function create_edit_post(button_source){
 function login_user(source){
     var parent_form = $(source).parents('form');
     var formdata = new FormData(parent_form[0]);
+    parent_form.find('input[type=password]').val('');
     $.ajax({
         url:"includes/methods/login.php",
         cache: false,
@@ -42,8 +43,8 @@ function login_user(source){
                 alert(response.message);
                 $("#user_info > .avatar").attr('src',response.avatar);
                 $("#user_info > .greeting").html(response.greeting);
-                $(".logout_link").show();
-                $(".login_link").hide();
+                $(".login_link").addClass('hidden');
+                $(".logout_link").removeClass('hidden');
                 $(".login_dialog").hide();
             }
             else{
@@ -51,4 +52,24 @@ function login_user(source){
             }
         }
     }).always(function(){ console.log("uhhmmmm");}).fail(function(){ console.log("uhhmmmm fail");});
+}
+function logout_user(){
+    $.ajax({
+        url:"includes/methods/logout.php",
+        cache: false,
+        type: 'post',
+        dataType: 'json',
+        success: function(response){
+            if(response.success){
+                alert(response.message);
+                $("#user_info > .avatar").attr('src',response.avatar);
+                $("#user_info > .greeting").html(response.greeting);
+                $(".logout_link").addClass('hidden');
+                $(".login_link").removeClass('hidden');
+            }
+            else{
+                alert(response.message);
+            }          
+        }
+    });
 }
