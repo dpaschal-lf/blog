@@ -28,6 +28,9 @@
     position: relative;
     top: 50px;
 }
+.sidebyside{
+    display: inline-block;
+}
 
 /*login styles*/
 .login_small input{
@@ -55,4 +58,9 @@
 }
 .login_small >.login_submit{
     margin-top: 5px;
+}
+
+/*create post page*/
+#blog_contents_textarea{
+    width: 100%;
 }
